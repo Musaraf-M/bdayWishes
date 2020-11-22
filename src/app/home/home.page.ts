@@ -40,7 +40,7 @@ export class HomePage {
 
     this.logiForm = this.fb.group({
       Name: ['',  [Validators.required]],
-      Wish: ['', Validators.compose([Validators.maxLength(50), Validators.required])],
+      Wish: ['', Validators.compose([Validators.maxLength(100), Validators.required])],
     })
 
     this.firebaseService.read_wish().subscribe(data => {
