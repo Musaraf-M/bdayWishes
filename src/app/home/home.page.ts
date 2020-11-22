@@ -39,8 +39,8 @@ export class HomePage {
   ngOnInit() {
 
     this.logiForm = this.fb.group({
-      Name: ['', [Validators.required]],
-      Wish: ['', [Validators.required]]
+      Name: ['',  [Validators.required]],
+      Wish: ['', Validators.compose([Validators.maxLength(50), Validators.required])],
     })
 
     this.firebaseService.read_wish().subscribe(data => {
